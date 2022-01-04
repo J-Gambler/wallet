@@ -6,7 +6,9 @@ import Loadable from 'ui-component/Loadable';
 
 // dashboard routing
 const DashboardDefault = Loadable(lazy(() => import('views/dashboard/default')));
-const Wallet = Loadable(lazy(() => import('views/dashboard/wallet')));
+const First = Loadable(lazy(() => import('views/dashboard/wallet/first')));
+const Create = Loadable(lazy(() => import('views/dashboard/wallet/create')));
+const Recover = Loadable(lazy(() => import('views/dashboard/wallet/recover')));
 
 // utilities routing
 const UtilsTypography = Loadable(lazy(() => import('views/utilities/Typography')));
@@ -34,7 +36,19 @@ const MainRoutes = {
         },
         {
             path: '/wallet',
-            element: <Wallet />
+            element: <First />
+        },
+        {
+            path: '/wallet/first',
+            element: <First />
+        },
+        {
+            path: '/wallet/create',
+            element: <Create />
+        },
+        {
+            path: '/wallet/recover',
+            element: <Recover />
         },
         {
             path: '/utils/util-typography',

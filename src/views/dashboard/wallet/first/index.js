@@ -10,7 +10,7 @@ import { gridSpacing } from 'store/constant';
 
 // ==============================|| DEFAULT DASHBOARD ||============================== //
 
-const Wallet = () => {
+const First = () => {
     const [isLoading, setLoading] = useState(true);
     useEffect(() => {
         setLoading(false);
@@ -32,4 +32,4 @@ const Wallet = () => {
     );
 };
 
-export default Wallet;
+export default First;
