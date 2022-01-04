@@ -1,31 +1,22 @@
 // assets
-import { IconBrandChrome, IconHelp } from '@tabler/icons';
+import SettingsOutlinedIcon from '@mui/icons-material/SettingsOutlined';
 
 // constant
-const icons = { IconBrandChrome, IconHelp };
+const icons = { SettingsOutlinedIcon };
 
 // ==============================|| SAMPLE PAGE & DOCUMENTATION MENU ITEMS ||============================== //
 
 const other = {
-    id: 'sample-docs-roadmap',
+    id: 'other',
     type: 'group',
     children: [
         {
-            id: 'sample-page',
-            title: 'Sample Page',
+            id: 'settings',
+            title: 'Settings',
             type: 'item',
-            url: '/sample-page',
-            icon: icons.IconBrandChrome,
+            url: '/settings',
+            icon: icons.SettingsOutlinedIcon,
             breadcrumbs: false
-        },
-        {
-            id: 'documentation',
-            title: 'Documentation',
-            type: 'item',
-            url: 'https://codedthemes.gitbook.io/berry/',
-            icon: icons.IconHelp,
-            external: true,
-            target: true
         }
     ]
 };

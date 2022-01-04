@@ -99,15 +99,14 @@ const NotificationSection = () => {
                     }
                 }}
             >
-                <ButtonBase sx={{ borderRadius: '12px' }}>
+                <ButtonBase>
                     <Avatar
-                        variant="rounded"
                         sx={{
                             ...theme.typography.commonAvatar,
                             ...theme.typography.mediumAvatar,
                             transition: 'all .2s ease-in-out',
-                            background: theme.palette.secondary.light,
-                            color: theme.palette.secondary.dark,
+                            background: '#fff',
+                            color: '#8F91A5',
                             '&[aria-controls="menu-list-grow"],&:hover': {
                                 background: theme.palette.secondary.dark,
                                 color: theme.palette.secondary.light
