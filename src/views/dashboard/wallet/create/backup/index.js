@@ -57,7 +57,7 @@ const BackUp = () => {
                                     <Typography sx={{ pt: '2rem' }}>
                                         {!check 
                                             ? <Button variant="contained" disabled sx={{ width: '100%' }}>Continue</Button>
-                                            :   <Link to="/wallet/create/backup/word">
+                                            :   <Link to="/wallet/create/backup/word" style={{ textDecoration: 'none' }}>
                                                     <Button variant="contained" sx={{ width: '100%', bgcolor: '#7c66eb' }}>Continue</Button>
                                                 </Link>
                                         }

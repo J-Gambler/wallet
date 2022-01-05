@@ -9,14 +9,15 @@ import {
     Grid,
     Checkbox 
 } from '@mui/material';
-import { Link } from 'react-router-dom';
 import BackButton from '../BackButton';
+import { Link } from 'react-router-dom';
+import VerifiedUserOutlinedIcon from '@mui/icons-material/VerifiedUserOutlined';
 
-const Word = () => {
+const Last = () => {
     const [check, setCheck] = useState(false);
     const theme = useTheme();
     const customization = useSelector((state) => state.customization);
-    const progress = [1,0,0,0,0,0,0,0,0,0,0,0]
+    const progress = [1,0,0,0,0,0]
     let index = 0;
 
     const onCheck = (e) => {
@@ -25,7 +26,7 @@ const Word = () => {
 
     return (
         <>
-            <BackButton url="/wallet/create/backup" />
+            <BackButton url="/wallet/create/backup/word" />
             <Box>
                 <Grid container direction="column">
                     <Grid item>
@@ -38,43 +39,28 @@ const Word = () => {
                                         textAlign: 'center',
                                         borderRadius: `${customization.borderRadius}px`,
                                         py: '5rem',
-                                        pt: '2rem'
                                     }}
                                 >
-                                    <Typography component="div" sx={{ pb: '1rem', display: 'flex', px: '2rem' }}>
-                                        {
-                                            progress.map(e => 
-                                                <Typography 
-                                                    component="div"
-                                                    key={index ++}
-                                                    sx={{ 
-                                                        height: "3px", 
-                                                        width: "8.33%", 
-                                                        display: 'inline-block',
-                                                        px: '1.5px',
-                                                    }}
-                                                >
-                                                    <Typography component="div" sx={{ bgcolor: e ? '#7c66eb' : '#cbd0d4', width: '100%', height: '100%' }}></Typography>
-                                                </Typography>
-                                            )
-                                        }
-                                    </Typography>
-                                    <Typography component="div" sx={{ height: '28rem', position: 'relative' }}>
-                                        <Typography component="div" sx={{ pt: 'calc(50% - 5rem)', px: '25%' }}>
+                                    <Typography variant="h2" sx={{ px: '7rem', lineHeight: '2rem'}}>The last step before using the wallet</Typography>
+                                    <Typography sx={{ fontSize: '1rem', pt: '1rem' }}>Please enter the recovery words</Typography>
+                                    <Typography component="div" sx={{ pt:'2rem', px: '3rem' }}>
+                                        {progress.map(e =>
+                                        <Typography component="div" key={index ++} sx={{ width: '50%', p: '.5rem', flexDirection: 'column', display: 'inline-block'}}>
                                             <Button variant="outlined" disabled size="large" 
                                                 sx={{ 
                                                     bgcolor: '#f2effd', 
                                                     color: `${theme.palette.common.black} !important`, 
                                                     fontSize: '1.25rem', 
+                                                    py: '1.25rem',
                                                     fontWeight: 500, 
-                                                    width: '100%'                                                    
+                                                    width: '100%'
                                                 }}
-                                            >Forest</Button>
-                                            <Typography sx={{ textAlign: 'left', pt: '.5rem' }}>1 of 12</Typography>
+                                            >{index + 1}</Button>
                                         </Typography>
+                                        )}
                                     </Typography>
-                                    <Typography component="div" sx={{ pt: '2rem', px: '5rem' }}>
-                                        <Link to="/wallet/create/backup/last" style={{ textDecoration: 'none' }}>
+                                    <Typography sx={{ pt: '2rem', px: '3rem' }} component="div">
+                                        <Link to="/wallet/create/backup/result" style={{ textDecoration: 'none' }}>
                                             <Button variant="contained" sx={{ width: '100%', bgcolor: '#7c66eb' }}>Next</Button>
                                         </Link>
                                     </Typography>
@@ -88,4 +74,4 @@ const Word = () => {
     );
 }
 
-export default Word;
+export default Last;
