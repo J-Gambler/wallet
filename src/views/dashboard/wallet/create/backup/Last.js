@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
 import { useTheme } from '@emotion/react';
 import { useSelector } from 'react-redux';
 
@@ -7,22 +8,66 @@ import {
     Button, 
     Box, 
     Grid,
-    Checkbox 
+    Dialog,
 } from '@mui/material';
 import BackButton from '../BackButton';
 import { Link } from 'react-router-dom';
-import VerifiedUserOutlinedIcon from '@mui/icons-material/VerifiedUserOutlined';
+import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
+import HighlightOffIcon from '@mui/icons-material/HighlightOff';
+
+function SimpleDialog(props) {
+    const { onClose, selectedValue, open } = props;
+    const theme = useTheme();
+
+    const handleClose = () => {
+        onClose(selectedValue);
+    };
+
+    const handleListItemClick = (value) => {
+        onClose(value);
+    };
+
+    return (
+        <Dialog onClose={handleClose} open={open} 
+            sx={{
+                    '& .MuiPaper-root': {
+                        bgcolor: 'transparent !important',
+                        boxShadow: 'none',
+                        borderRadius: '0px'
+                    }
+                }}>
+            <Typography component="div" sx={{ textAlign: 'center', pb: '1rem'}}>
+                <HighlightOffIcon sx={{ fontSize: '5rem', color: theme.palette.common.white }} />
+            </Typography>
+            <Typography sx={{ color: 'white', fontSize: '1.25rem', textAlign: 'center' }}>Sorry, the entered word is incorrect</Typography>
+            <Typography sx={{ color: 'white', fontSize: '.875rem', textAlign: 'center', pt: '1rem', pb: '3rem' }}>Try to create a wallet again</Typography>
+            <Button sx={{ px: '5rem', textAlign: 'center', bgcolor: '#7c66eb' }} variant="contained">Create a wallet</Button>
+            <Typography sx={{ pt: '1rem', fontSize: '.875rem', textAlign: 'center', color: '#aaabb0' }}>Cancel</Typography>
+        </Dialog>
+    );
+}
+  
+SimpleDialog.propTypes = {
+    onClose: PropTypes.func.isRequired,
+    open: PropTypes.bool.isRequired,
+};
 
 const Last = () => {
-    const [check, setCheck] = useState(false);
+
+    const [open, setOpen] = useState(false);
     const theme = useTheme();
     const customization = useSelector((state) => state.customization);
     const progress = [1,0,0,0,0,0]
+
     let index = 0;
 
-    const onCheck = (e) => {
-        setCheck(e.target.checked);
-    }
+    const handleClickOpen = () => {
+        setOpen(true);
+    };
+
+    const handleClose = (value) => {
+        setOpen(false);
+    };
 
     return (
         <>
@@ -60,9 +105,7 @@ const Last = () => {
                                         )}
                                     </Typography>
                                     <Typography sx={{ pt: '2rem', px: '3rem' }} component="div">
-                                        <Link to="/wallet/create/backup/result" style={{ textDecoration: 'none' }}>
-                                            <Button variant="contained" sx={{ width: '100%', bgcolor: '#7c66eb' }}>Next</Button>
-                                        </Link>
+                                        <Button variant="contained" sx={{ width: '100%', bgcolor: '#7c66eb' }} onClick={handleClickOpen}>Next</Button>
                                     </Typography>
                                 </Box>
                             </Grid>
@@ -70,6 +113,10 @@ const Last = () => {
                     </Grid>
                 </Grid>
             </Box>
+            <SimpleDialog
+                open={open}
+                onClose={handleClose}
+            />
         </>
     );
 }
