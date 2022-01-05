@@ -14,6 +14,9 @@ import Customization from '../Customization';
 import navigation from 'menu-items';
 import { drawerWidth } from 'store/constant';
 import { SET_MENU } from 'store/actions';
+import Vector3 from 'assets/images/background/Vector 3.png';
+// import Vector3 from '../../assets/images/logo.png';
+import Ellipse8 from 'assets/images/background/Ellipse 8.png';
 
 // assets
 import { IconChevronRight } from '@tabler/icons';
@@ -94,7 +97,7 @@ const MainLayout = () => {
                     transition: leftDrawerOpened ? theme.transitions.create('width') : 'none'
                 }}
             >
-                <Toolbar>
+                <Toolbar sx={{ borderBottom: 'solid 1px #f3f3f3' }}>
                     <Header handleLeftDrawerToggle={handleLeftDrawerToggle} />
                 </Toolbar>
             </AppBar>
@@ -106,6 +109,31 @@ const MainLayout = () => {
             <Main theme={theme} open={leftDrawerOpened}>
                 {/* breadcrumb */}
                 <Breadcrumbs separator={IconChevronRight} navigation={navigation} icon title rightAlign />
+                <div 
+                    style={{
+                        backgroundImage: `url("${Vector3}")`,
+                        position: 'absolute',
+                        width: '1034.43px',
+                        height: '647.87px',
+                        top: '50px',
+                        backgroundSize: '100% 100%',
+                        backgroundRepeat: 'no-repeat',
+                        transform: 'rotate(0deg)',
+                    }}
+                >
+                </div>
+                <div
+                    style={{
+                        backgroundImage: `url("${Ellipse8}")`,
+                        position: 'absolute',
+                        width: '576.21px',
+                        height: '576.21px',
+                        left: '293.74px',
+                        top: '386px',
+                        backgroundSize: '100% 100%',
+                        transform: 'rotate(35.59deg)',
+                    }}
+                ></div>
                 <Outlet />
             </Main>
             <Customization />

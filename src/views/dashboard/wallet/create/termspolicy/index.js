@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { useSelector } from 'react-redux';
 import Policy from './Policy';
 import Terms from './Terms';
 import PropTypes from 'prop-types';
@@ -8,11 +9,15 @@ import { useTheme } from '@mui/material/styles';
 
 function TabPanel(props) {
     const { children, value, index, ...other } = props;
+    const customization = useSelector((state) => state.customization);
 
     return (
         <div
             role="tabpanel"
-            style={{ backgroundColor: '#f8fafc' }}
+            style={{ 
+                backgroundColor: '#f8fafc',
+                borderRadius: `${customization.borderRadius}px` 
+            }}
             hidden={value !== index}
             id={`simple-tabpanel-${index}`}
             aria-labelledby={`simple-tab-${index}`}
@@ -43,15 +48,32 @@ function a11yProps(index) {
 const TermsPolicy = () => {
     const [value, setValue] = useState(0);
     const theme = useTheme();
+    const customization = useSelector((state) => state.customization);
 
     const handleChange = (event, newValue) => {
         setValue(newValue);
     }
 
     return (
-        <>
-            <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
-                <Tabs value={value} onChange={handleChange} aria-label="basic tabs example" sx={{ backgroundColor: '#f8fafc' }}>
+        <Box 
+            sx={{ 
+                position: 'relative', 
+                bgcolor: theme.palette.common.white, 
+                p: '1.5rem',
+                borderRadius: `${customization.borderRadius}px`,
+            }}>
+            <Box>
+                <Tabs 
+                    value={value} 
+                    onChange={handleChange} 
+                    aria-label="basic tabs example" 
+                    sx={{ 
+                        backgroundColor: '#f8fafc', 
+                        mb: '1rem',
+                        borderRadius: `${customization.borderRadius}px`,
+                        pl: '2rem'
+                    }}
+                >
                     <Tab label="Terms of Service" {...a11yProps(0)} />
                     <Tab label="Privacy Policy" {...a11yProps(1)} />
                 </Tabs>
@@ -74,7 +96,7 @@ const TermsPolicy = () => {
                     </Link>
                 </Stack>
             </Typography>
-        </>
+        </Box>
     )
 }
 
