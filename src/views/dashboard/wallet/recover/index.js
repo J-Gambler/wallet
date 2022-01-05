@@ -40,7 +40,9 @@ function SimpleDialog(props) {
                 <CheckCircleOutlineIcon sx={{ fontSize: '5rem', color: theme.palette.common.white }} />
             </Typography>
             <Typography sx={{ color: 'white', fontSize: '1.25rem', textAlign: 'center', pb: '2rem' }}>Your wallet was successfully created</Typography>
-            <Button sx={{ px: '5rem', textAlign: 'center', bgcolor: '#7c66eb' }} variant="contained">Ok</Button>
+            <Link to="/wallet/main" style={{ textAlign: 'center', textDecoration: 'none' }}>
+                <Button sx={{ px: '5rem', bgcolor: '#7c66eb' }} variant="contained">Ok</Button>
+            </Link>
         </Dialog>
     );
 }
