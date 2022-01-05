@@ -9,6 +9,7 @@ import {
     Grid,
     Checkbox 
 } from '@mui/material';
+import { Link } from 'react-router-dom';
 import BackButton from '../BackButton';
 import VerifiedUserOutlinedIcon from '@mui/icons-material/VerifiedUserOutlined';
 
@@ -56,7 +57,9 @@ const BackUp = () => {
                                     <Typography sx={{ pt: '2rem' }}>
                                         {!check 
                                             ? <Button variant="contained" disabled sx={{ width: '100%' }}>Continue</Button>
-                                            : <Button variant="contained" sx={{ width: '100%' }}>Continue</Button>
+                                            :   <Link to="/wallet/create/backup/word">
+                                                    <Button variant="contained" sx={{ width: '100%', bgcolor: '#7c66eb' }}>Continue</Button>
+                                                </Link>
                                         }
                                         
                                     </Typography>

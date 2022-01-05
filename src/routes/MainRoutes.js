@@ -9,6 +9,7 @@ const DashboardDefault = Loadable(lazy(() => import('views/dashboard/default')))
 const First = Loadable(lazy(() => import('views/dashboard/wallet/first')));
 const Create = Loadable(lazy(() => import('views/dashboard/wallet/create')));
 const BackUp = Loadable(lazy(() => import('views/dashboard/wallet/create/backup')));
+const Word = Loadable(lazy(() => import('views/dashboard/wallet/create/backup/Word')));
 const Recover = Loadable(lazy(() => import('views/dashboard/wallet/recover')));
 
 // utilities routing
@@ -50,6 +51,10 @@ const MainRoutes = {
         {
             path: '/wallet/create/backup',
             element: <BackUp />
+        },
+        {
+            path: '/wallet/create/backup/word',
+            element: <Word />
         },
         {
             path: '/wallet/recover',
