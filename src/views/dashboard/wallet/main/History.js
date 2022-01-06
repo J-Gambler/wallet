@@ -12,12 +12,12 @@ import CalendarTodayOutlinedIcon from '@mui/icons-material/CalendarTodayOutlined
 const History = () => {
 
     const tokens = [
-        {coin: 'Bitcoin',img: BinanceIcon,unit: 'BTS'},
-        {coin: 'Ethereum',img: EtherIcon,unit: 'ETH'},
-        {coin: 'XPR',img: EtherIcon,unit: 'BNB'},
-        {coin: 'Bitcoin',img: EtherIcon,unit: 'BTS'},
-        {coin: 'Ethereum',img: EtherIcon,unit: 'ETH'},
-        {coin: 'XPR',img: EtherIcon,unit: 'BNB'},
+        {coin: 'Bitcoin',img: BinanceIcon,unit: 'BTS', token: '-3.9587448 BTC', money: '-$32,434.34'},
+        {coin: 'Ethereum',img: EtherIcon,unit: 'ETH', token: '-3.9587448 BTC', money: '-$32,434.34'},
+        {coin: 'XPR',img: EtherIcon,unit: 'BNB', token: '-3.9587448 BTC', money: '-$32,434.34'},
+        {coin: 'Bitcoin',img: EtherIcon,unit: 'BTS', token: '-3.9587448 BTC', money: '-$32,434.34'},
+        {coin: 'Ethereum',img: EtherIcon,unit: 'ETH', token: '-3.9587448 BTC', money: '-$32,434.34'},
+        {coin: 'XPR',img: EtherIcon,unit: 'BNB', token: '-3.9587448 BTC', money: '-$32,434.34'},
     ]
     const customization = useSelector((state) => state.customization);
     const theme = useTheme();
@@ -59,10 +59,9 @@ const History = () => {
                                         title={<Typography variant="h5">{e.coin}</Typography>}
                                         subheader={<Typography sx={{ fontSize: '.75rem' }}>$43,678.54</Typography>}
                                         action={
-                                            <Typography component="div" sx={{ display: 'flex' }}>
-                                                <Typography sx={{ display: 'inline-block', m: 'auto', fontSize: '1rem', color: '#162534'}} variant="h4">{e.unit}</Typography>
-                                                <Divider orientation="vertical" flexItem sx={{ borderColor: '#cbd0d4', mx: '.5rem' }} />
-                                                <CloseIcon sx={{ m: 'auto', color: '#cbd0d4' }}/>
+                                            <Typography component="div">
+                                                <Typography sx={{ textAlign: 'right',fontSize: '1rem', color: '#162534'}} variant="h4">{e.token}</Typography>
+                                                <Typography sx={{ textAlign: 'right', fontSize: '.875rem', color: '#98a1aa'}}>{e.money}</Typography>
                                             </Typography>
                                         }
                                     />
