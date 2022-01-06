@@ -7,6 +7,9 @@ import {
     Button
 } from '@mui/material';
 
+import BuySell from './BuySell';
+import Swap from './Swap';
+
 import SwapHorizOutlinedIcon from '@mui/icons-material/SwapHorizOutlined';
 import VerticalAlignBottomOutlinedIcon from '@mui/icons-material/VerticalAlignBottomOutlined';
 import VerticalAlignTopOutlinedIcon from '@mui/icons-material/VerticalAlignTopOutlined';
@@ -14,6 +17,24 @@ import VerticalAlignTopOutlinedIcon from '@mui/icons-material/VerticalAlignTopOu
 const Balance = () => {
     const customization = useSelector((state) => state.customization);
     const theme = useTheme();
+    const [openBuySell, setOpenBuySell] = useState(false);
+    const [openSwap, setOpenSwap] = useState(false);
+  
+    const handleClickBuySellOpen = () => {
+        setOpenBuySell(true);
+    };
+  
+    const handleCloseBuySell = (value) => {
+        setOpenBuySell(false);
+    };
+      
+    const handleClickSwap = () => {
+        setOpenSwap(true);
+    };
+  
+    const handleCloseSwap = (value) => {
+        setOpenSwap(false);
+    };
 
     return (
         <>
@@ -50,11 +71,19 @@ const Balance = () => {
                     }}
                 >
                     <Button startIcon={<VerticalAlignTopOutlinedIcon />} size="large" sx={{ bgcolor: theme.palette.common.white, px: '1rem', color: '#7c66eb' }} >Send</Button>
-                    <Button startIcon={<VerticalAlignBottomOutlinedIcon />} size="large" sx={{ bgcolor: theme.palette.common.white, px: '1rem', color: '#7c66eb' }}>Buy</Button>
+                    <Button startIcon={<VerticalAlignBottomOutlinedIcon />} size="large" onClick={handleClickBuySellOpen} sx={{ bgcolor: theme.palette.common.white, px: '1rem', color: '#7c66eb' }}>Buy</Button>
                     <Button startIcon={<VerticalAlignBottomOutlinedIcon />} size="large" sx={{ bgcolor: theme.palette.common.white, px: '1rem', color: '#7c66eb' }}>Receive</Button>
-                    <Button startIcon={<SwapHorizOutlinedIcon />} size="large" sx={{ bgcolor: theme.palette.common.white, px: '1rem', color: '#7c66eb' }}>Swap</Button>
+                    <Button startIcon={<SwapHorizOutlinedIcon />} size="large" onClick={handleClickSwap} sx={{ bgcolor: theme.palette.common.white, px: '1rem', color: '#7c66eb' }}>Swap</Button>
                 </Typography>
             </Box>
+            <BuySell 
+                open={openBuySell}
+                onClose={handleCloseBuySell}
+            />
+            <Swap 
+                open={openSwap}
+                onClose={handleCloseSwap}
+            />
         </>
     );
 }
