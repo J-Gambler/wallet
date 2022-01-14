@@ -14,51 +14,13 @@ import {
 import { useTheme } from '@mui/material/styles';
 import User1 from 'assets/images/users/user-round.svg';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
-
-function a11yProps(index) {
-    return {
-        id: `full-width-tab-${index}`,
-        'aria-controls': `full-width-tabpanel-${index}`,
-    };
-}
-
-function TabPanel(props) {
-    const { children, value, index, ...other } = props;
-
-    return (
-    <div
-        role="tabpanel"
-        hidden={value !== index}
-        id={`full-width-tabpanel-${index}`}
-        aria-labelledby={`full-width-tab-${index}`}
-        {...other}
-    >
-        {value === index && (
-        <Box sx={{ p: 3, pt: 0 }}>
-            <Typography component="div" sx={{ flexDirection: 'column', gap: '.5rem', display: 'flex' }}>{children}</Typography>
-        </Box>
-        )}
-    </div>
-    );
-}
-
-TabPanel.propTypes = {
-    children: PropTypes.node,
-    index: PropTypes.number.isRequired,
-    value: PropTypes.number.isRequired,
-};
     
 const Swap = ({ onClose, open }) => {
     const theme = useTheme();
-    const [value, setValue] = useState(0);
     const customization = useSelector((state) => state.customization);
 
     const handleClose = () => {
         onClose(true)
-    };
-  
-    const handleChange = (event, newValue) => {
-      setValue(newValue);
     };
           
     return (
