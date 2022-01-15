@@ -10,6 +10,7 @@ import Identify from "./Identify";
 import Pay from "./Pay";
 import Setting from "./Setting";
 import Money from "./Money";
+import Password from "./Password";
 
 import EastIcon from '@mui/icons-material/East';
 import TuneIcon from '@mui/icons-material/Tune';
