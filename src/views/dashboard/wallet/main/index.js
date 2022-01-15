@@ -6,6 +6,7 @@ import Tokens from './Tokens';
 import History from './History';
 import Search from './Search';
 import Market from "./Market";
+import Identify from "./Identify";
 
 import EastIcon from '@mui/icons-material/East';
 import TuneIcon from '@mui/icons-material/Tune';
@@ -52,7 +53,7 @@ const Main = () => {
                 open={openSearch}
                 onClose={handleCloseSearch}
             />
-            <Market 
+            <Identify 
                 open={openMarket}
                 onClose={handleCloseMarket}
             />
