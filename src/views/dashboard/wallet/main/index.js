@@ -8,6 +8,7 @@ import Search from './Search';
 import Market from "./Market";
 import Identify from "./Identify";
 import Pay from "./Pay";
+import Setting from "./Setting";
 
 import EastIcon from '@mui/icons-material/East';
 import TuneIcon from '@mui/icons-material/Tune';
@@ -54,7 +55,7 @@ const Main = () => {
                 open={openSearch}
                 onClose={handleCloseSearch}
             />
-            <Pay 
+            <Setting 
                 open={openMarket}
                 onClose={handleCloseMarket}
             />
