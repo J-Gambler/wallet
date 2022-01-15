@@ -1,8 +1,8 @@
 // assets
-import SettingsOutlinedIcon from '@mui/icons-material/SettingsOutlined';
+import Setting from 'assets/images/icons/Setting.svg';
 
 // constant
-const icons = { SettingsOutlinedIcon };
+const icons = { Setting };
 
 // ==============================|| SAMPLE PAGE & DOCUMENTATION MENU ITEMS ||============================== //
 
@@ -15,7 +15,7 @@ const other = {
             title: 'Settings',
             type: 'item',
             url: '/settings',
-            icon: icons.SettingsOutlinedIcon,
+            icon: icons.Setting,
             breadcrumbs: false
         }
     ]

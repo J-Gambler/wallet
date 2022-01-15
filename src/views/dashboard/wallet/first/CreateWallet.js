@@ -11,7 +11,7 @@ import MainCard from 'ui-component/cards/MainCard';
 import SkeletonTotalOrderCard from 'ui-component/cards/Skeleton/EarningCard';
 
 // assets
-import AddIcon from '@mui/icons-material/Add';
+import Subtract from 'assets/images/icons/Subtract.svg';
 
 const CardWrapper = styled(MainCard)(({ theme }) => ({
     backgroundColor: '#e5edfa',
@@ -46,18 +46,7 @@ const CreateWallet = ({ isLoading }) => {
                                 <Grid item>
                                     <Grid container justifyContent="center">
                                         <Grid item>
-                                            <Avatar
-                                                variant="rounded"
-                                                sx={{
-                                                    ...theme.typography.commonAvatar,
-                                                    ...theme.typography.largeAvatar,
-                                                    // backgroundColor: theme.palette.secondary[800],
-                                                    backgroundColor: 'transparent',
-                                                    mt: 1
-                                                }}
-                                            >
-                                                <AddIcon sx={{ color: '#000', fontSize: 60 }}/>
-                                            </Avatar>
+                                            <img style={{ paddingTop: '1.5625rem'}} src={Subtract} />
                                         </Grid>
                                     </Grid>
                                 </Grid>

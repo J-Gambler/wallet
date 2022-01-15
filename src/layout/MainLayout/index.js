@@ -136,7 +136,7 @@ const MainLayout = () => {
                 ></div>
                 <Outlet />
             </Main>
-            <Customization />
+            {/* <Customization /> */}
         </Box>
     );
 };

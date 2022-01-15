@@ -1,11 +1,11 @@
 // assets
-import GridViewOutlinedIcon from '@mui/icons-material/GridViewOutlined';
-import FolderOpenOutlinedIcon from '@mui/icons-material/FolderOpenOutlined';
-import CloudOutlinedIcon from '@mui/icons-material/CloudOutlined';
-import AccountBalanceWalletOutlinedIcon from '@mui/icons-material/AccountBalanceWalletOutlined';
+import Dashboard from 'assets/images/icons/Dashboard.svg';
+import Storage from 'assets/images/icons/Storage.svg';
+import Cloud from 'assets/images/icons/Cloud.svg';
+import Wallet from 'assets/images/icons/Wallet.svg';
 
 // constant
-const icons = { GridViewOutlinedIcon, FolderOpenOutlinedIcon, CloudOutlinedIcon, AccountBalanceWalletOutlinedIcon };
+const icons = { Dashboard, Storage, Cloud, Wallet };
 
 // ==============================|| DASHBOARD MENU ITEMS ||============================== //
 
@@ -18,7 +18,7 @@ const dashboard = {
             title: 'Dashboard',
             type: 'item',
             url: '/dashboard',
-            icon: icons.GridViewOutlinedIcon,
+            icon: icons.Dashboard,
             breadcrumbs: false
         },
         {
@@ -26,7 +26,7 @@ const dashboard = {
             title: 'Storage',
             type: 'item',
             url: '/storage',
-            icon: icons.FolderOpenOutlinedIcon,
+            icon: icons.Storage,
             breadcrumbs: false
         },
         {
@@ -34,7 +34,7 @@ const dashboard = {
             title: 'Cloud',
             type: 'item',
             url: '/cloud',
-            icon: icons.CloudOutlinedIcon,
+            icon: icons.Cloud,
             breadcrumbs: false
         },
         {
@@ -42,7 +42,7 @@ const dashboard = {
             title: 'My Wallet',
             type: 'item',
             url: '/wallet',
-            icon: icons.AccountBalanceWalletOutlinedIcon,
+            icon: icons.Wallet,
             breadcrumbs: false
         }
     ]

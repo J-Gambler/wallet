@@ -12,7 +12,7 @@ import {
     CardHeader
 } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
-import User1 from 'assets/images/users/user-round.svg';
+import User1 from 'assets/images/users/user-round.png';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 
 function a11yProps(index) {

@@ -18,7 +18,8 @@ import {
     Stack,
     TextField,
     Typography,
-    useMediaQuery
+    useMediaQuery,
+    Badge
 } from '@mui/material';
 
 // third-party
@@ -118,7 +119,10 @@ const NotificationSection = () => {
                         onClick={handleToggle}
                         color="inherit"
                     >
-                        <IconBell stroke={1.5} size="1.3rem" />
+                        
+                        <Badge color="error" overlap="circular" variant="dot">
+                            <IconBell />
+                        </Badge>
                     </Avatar>
                 </ButtonBase>
             </Box>

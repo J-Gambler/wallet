@@ -11,7 +11,7 @@ import MainCard from 'ui-component/cards/MainCard';
 import SkeletonEarningCard from 'ui-component/cards/Skeleton/EarningCard';
 
 // assets
-import ArrowRightAltIcon from '@mui/icons-material/ArrowRightAlt';
+import RecoverIcon from 'assets/images/icons/recover.svg';
 
 const CardWrapper = styled(MainCard)(({ theme }) => ({
     backgroundColor: '#7C66EB',
@@ -47,18 +47,8 @@ const RecoverWallet = ({ isLoading }) => {
                                 <Grid item>
                                     <Grid container justifyContent="center">
                                         <Grid item>
-                                            <Avatar
-                                                variant="rounded"
-                                                sx={{
-                                                    ...theme.typography.commonAvatar,
-                                                    ...theme.typography.largeAvatar,
-                                                    // backgroundColor: theme.palette.secondary[800],
-                                                    backgroundColor: 'transparent',
-                                                    mt: 1
-                                                }}
-                                            >
-                                                <ArrowRightAltIcon sx={{ color: '#fff', fontSize: 53 }}/>
-                                            </Avatar>
+                                            <img src={RecoverIcon} style={{ paddingTop: '2.5rem' }}/>
+                                                {/* <RecoverIcon sx={{ color: '#fff', fontSize: 53 }}/> */}
                                         </Grid>
                                     </Grid>
                                 </Grid>

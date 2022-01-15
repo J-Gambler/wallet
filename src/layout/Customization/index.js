@@ -69,6 +69,8 @@ const Customization = () => {
             break;
     }
 
+    initialFont = 'Inter';
+
     // state - font family
     const [fontFamily, setFontFamily] = useState(initialFont);
     useEffect(() => {
@@ -85,6 +87,7 @@ const Customization = () => {
                 newFont = `'Roboto', sans-serif`;
                 break;
         }
+        newFont = 'Inter'
         dispatch({ type: SET_FONT_FAMILY, fontFamily: newFont });
     }, [dispatch, fontFamily]);
 
