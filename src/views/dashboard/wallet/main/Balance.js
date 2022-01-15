@@ -8,6 +8,7 @@ import {
 } from '@mui/material';
 
 import BuySell from './BuySell';
+import Buy from './Buy';
 import Swap from './Swap';
 
 import SwapHorizOutlinedIcon from '@mui/icons-material/SwapHorizOutlined';
@@ -18,6 +19,7 @@ const Balance = () => {
     const customization = useSelector((state) => state.customization);
     const theme = useTheme();
     const [openBuySell, setOpenBuySell] = useState(false);
+    const [openBuy, setOpenBuy] = useState(false);
     const [openSwap, setOpenSwap] = useState(false);
   
     const handleClickBuySellOpen = () => {
@@ -28,6 +30,14 @@ const Balance = () => {
         setOpenBuySell(false);
     };
       
+    const handleClickBuy = () => {
+        setOpenBuy(true);
+    }
+
+    const handleCloseBuy = () => {
+        setOpenBuy(false);
+    }
+
     const handleClickSwap = () => {
         setOpenSwap(true);
     };
@@ -70,7 +80,7 @@ const Balance = () => {
                         py: '.5rem'
                     }}
                 >
-                    <Button startIcon={<VerticalAlignTopOutlinedIcon />} size="large" sx={{ bgcolor: theme.palette.common.white, px: '1rem', color: '#7c66eb' }} >Send</Button>
+                    <Button startIcon={<VerticalAlignTopOutlinedIcon />} size="large" onClick={handleClickBuy} sx={{ bgcolor: theme.palette.common.white, px: '1rem', color: '#7c66eb' }} >Send</Button>
                     <Button startIcon={<VerticalAlignBottomOutlinedIcon />} size="large" onClick={handleClickBuySellOpen} sx={{ bgcolor: theme.palette.common.white, px: '1rem', color: '#7c66eb' }}>Buy</Button>
                     <Button startIcon={<VerticalAlignBottomOutlinedIcon />} size="large" sx={{ bgcolor: theme.palette.common.white, px: '1rem', color: '#7c66eb' }}>Receive</Button>
                     <Button startIcon={<SwapHorizOutlinedIcon />} size="large" onClick={handleClickSwap} sx={{ bgcolor: theme.palette.common.white, px: '1rem', color: '#7c66eb' }}>Swap</Button>
@@ -83,6 +93,10 @@ const Balance = () => {
             <Swap 
                 open={openSwap}
                 onClose={handleCloseSwap}
+            />
+            <Buy 
+                open={openBuy}
+                onClose={handleCloseBuy}
             />
         </>
     );

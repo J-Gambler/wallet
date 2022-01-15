@@ -25,6 +25,7 @@ const Search = ({open, onClose}) => {
 
     const customization = useSelector((state) => state.customization);
     const list = [1,2,3,4,5,6,7,8]
+    let index = 1
 
     const handleClose = () => {
         onClose(true)
@@ -54,7 +55,7 @@ const Search = ({open, onClose}) => {
                     </Box>
                     <Box sx={{ px: '2rem', pb: '3rem', flexDirection: 'column', gap: '.5rem', display: 'flex' }}>
                         { list.map ( () => 
-                            <Box 
+                            <Box key={index ++}
                                 sx={{ 
                                     display: 'flex', 
                                     flexDirection: 'row', 
