@@ -40,7 +40,7 @@ const RecoverWallet = ({ isLoading }) => {
             {isLoading ? (
                 <SkeletonEarningCard />
             ) : (
-                <CardWrapper border={false} content={false}>
+                <CardWrapper border={false} content={false} sx={{ position: 'relatvie' }}>
                     <Link to="/wallet/recover" style={{ textDecoration: 'none' }}>
                         <Box sx={{ p: 2.25 }}>
                             <Grid container direction="column">
@@ -67,7 +67,7 @@ const RecoverWallet = ({ isLoading }) => {
                                             fontSize: '1rem',
                                             fontWeight: 500,
                                             textAlign: 'center',
-                                            color: theme.palette.secondary[200]
+                                            color: '#d8d1f9'
                                         }}
                                     >
                                         I already have a wallet
@@ -76,6 +76,33 @@ const RecoverWallet = ({ isLoading }) => {
                             </Grid>
                         </Box>
                     </Link>
+                    <Typography 
+                        sx={{
+                            position: 'absolute',
+                            width: '158.6px',
+                            height: '158.6px',
+                            left: '269.6px',
+                            top: '-79px',
+
+                            background: '#AC9BFF',
+                            filter: 'blur(41.4663px)',
+                            transform: 'rotate(90deg)'
+                        }}
+                    ></Typography>
+                    <Typography
+                        sx={{
+                            position: 'absolute',
+                            width: '128.07px',
+                            height: '128.07px',
+                            left: '-51.93px',
+                            top: '36px',
+                            background: '#AC9BFF',
+                            filter: 'blur(48.421px)',
+                            transform: 'rotate(90deg)',
+                        }}
+                    >
+
+                    </Typography>
                 </CardWrapper>
             )}
         </>

@@ -120,7 +120,7 @@ const NotificationSection = () => {
                         color="inherit"
                     >
                         
-                        <Badge color="error" overlap="circular" variant="dot">
+                        <Badge color="error" sx={{ '& .css-jncb7-MuiBadge-badge' : { top: '30%', right: '30%'} }} overlap="circular" variant="dot">
                             <IconBell />
                         </Badge>
                     </Avatar>
