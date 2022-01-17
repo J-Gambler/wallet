@@ -17,14 +17,26 @@ import MenuIcon from '@mui/icons-material/Menu';
 import SearchIcon from '@mui/icons-material/Search';
 import DirectionsIcon from '@mui/icons-material/Directions';
 
-import Bitcoin from 'assets/images/icons/bitcoin.png';
-import Ethereum from 'assets/images/icons/eth.png';
+import CloseIcon from '@mui/icons-material/Close';
+import EtherIcon from 'assets/images/icons/Eth.svg';
+import Bitcoin from 'assets/images/icons/Bitcoin.svg';
+import XPRcoin from 'assets/images/icons/XPR.svg';
+
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 
 const Search = ({open, onClose}) => {
 
     const customization = useSelector((state) => state.customization);
-    const list = [1,2,3,4,5,6,7,8]
+    const tokens = [
+        {coin: 'Bitcoin',img: Bitcoin,unit: 'BTS', bg: 'rgba(255, 210, 51, 0.15)', p: '13px'},
+        {coin: 'Ethereum',img: EtherIcon,unit: 'ETH', bg: '#7F6EE9', p: '13px'},
+        {coin: 'XPR',img: XPRcoin,unit: 'BNB', bg: '#25292C', p: '13px'},
+        {coin: 'Bitcoin',img: Bitcoin ,unit: 'BTS', bg: 'rgba(255, 210, 51, 0.15)', p: '13px'},
+        {coin: 'Ethereum',img: EtherIcon,unit: 'ETH', bg: '#7F6EE9', p: '13px'},
+        {coin: 'XPR',img: XPRcoin,unit: 'BNB', bg: '#25292C', p: '13px'},
+        {coin: 'Bitcoin',img: Bitcoin ,unit: 'BTS', bg: 'rgba(255, 210, 51, 0.15)', p: '13px'},
+        {coin: 'Ethereum',img: EtherIcon,unit: 'ETH', bg: '#7F6EE9', p: '13px'},
+    ]
     let index = 1
 
     const handleClose = () => {
@@ -47,14 +59,16 @@ const Search = ({open, onClose}) => {
                                 <SearchIcon />
                             </IconButton>
                             <InputBase
-                                sx={{ ml: 1, flex: 1 }}
+                                sx={{ borderRadius: '8px', ml: 1, flex: 1, "::placeholder" : {
+                                    fontSize: '16px'
+                                } }}
                                 placeholder="Search"
                                 inputProps={{ 'aria-label': 'search' }}
                             />
                         </Paper>
                     </Box>
                     <Box sx={{ px: '2rem', pb: '3rem', flexDirection: 'column', gap: '.5rem', display: 'flex' }}>
-                        { list.map ( () => 
+                        { tokens.map ( (e) => 
                             <Box key={index ++}
                                 sx={{ 
                                     display: 'flex', 
@@ -81,15 +95,27 @@ const Search = ({open, onClose}) => {
                                     <CardHeader 
                                         sx={{ p: 0, '& .css-sgoict-MuiCardHeader-action': {m: 'auto'} }}
                                         avatar={
-                                            <Avatar aria-label="recipe" src={Ethereum} />
+                                            <Avatar aria-label="recipe" src={e.img} sx={{ p: '8px', px: e.p, bgcolor: e.bg }} />
                                         }
-                                        title={<Typography variant="h4" sx={{ bgcolor: 'transparent' }}>Ethereum</Typography>}
+                                        title={<Typography variant="h4" sx={{ bgcolor: 'transparent', fontSize: '16px', fontWeight: 600 }}>{e.coin}</Typography>}
                                     />
                                 </Typography>
                             </Box>
                         )}
                         <Typography component="div">
-                            <Button variant="contained" sx={{ width: '100%', bgcolor: '#7c66eb', py: 1, mt: 2 }}>
+                            <Button 
+                                variant="contained" 
+                                sx={{
+                                    mt: 2, 
+                                    width: '100%', 
+                                    bgcolor: '#7C66EB',
+                                    borderRadius: '4px',
+                                    paddingTop: '12.5px', 
+                                    paddingBottom: '12.5px', 
+                                    color: '#FFFFFF', 
+                                    fontSize: '16px',  
+                                }}
+                            >
                                 Done
                             </Button>
                         </Typography>
