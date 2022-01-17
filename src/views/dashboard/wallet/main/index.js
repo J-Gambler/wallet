@@ -14,6 +14,8 @@ import Password from "./Password";
 
 import EastIcon from '@mui/icons-material/East';
 import TuneIcon from '@mui/icons-material/Tune';
+import SettingIcon from 'assets/images/icons/Setting.svg';
+import ListIcon from 'assets/images/icons/List.svg';
 import SettingsOutlinedIcon from '@mui/icons-material/SettingsOutlined';
 
 const Main = () => {
@@ -39,8 +41,8 @@ const Main = () => {
     return (
         <>
             <Typography component="div" sx={{ marginLeft: 'auto', textAlign: 'right' }}>
-                <Button variant="outlined" startIcon={<TuneIcon />} onClick={handleClickSearch}>Token List</Button>
-                <Button variant="outlined" startIcon={<SettingsOutlinedIcon />} onClick={handleClickMarket} sx={{ ml: '.5rem' }}>Wallet Settings</Button>
+                <Button variant="outlined" startIcon={<img src={ListIcon} />} onClick={handleClickSearch} sx={{ color: 'black', border: '0px', bgcolor: '#F8FAFC', p: '1rem', py: '.5rem' }}>Token List</Button>
+                <Button variant="outlined" startIcon={<img src={SettingIcon} />} onClick={handleClickMarket} sx={{ ml: '.5rem', color: 'black', border: '0px', bgcolor: '#F8FAFC', p: '1rem', py: '.5rem' }}>Wallet Settings</Button>
             </Typography>
             <Grid container>
                 <Grid lg={12} md={12} item>
