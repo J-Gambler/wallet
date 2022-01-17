@@ -62,7 +62,7 @@ const Word = () => {
                                                             height: '75px',
                                                             p: '1rem',
                                                             pt: '.5rem'
-                                                        }}>{index ++ }
+                                                        }}>{ ++ index }
                                                     </Grid>
                                                 </Grid>
                                             )
