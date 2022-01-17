@@ -17,7 +17,7 @@ const Word = () => {
     const theme = useTheme();
     const customization = useSelector((state) => state.customization);
     const progress = [1,0,0,0,0,0]
-    let index = 0;
+    let index = 1;
 
     const onCheck = (e) => {
         setCheck(e.target.checked);
@@ -43,10 +43,9 @@ const Word = () => {
                                     <Typography component="div">
                                         {
                                             progress.map(e => 
-                                                <Grid container sx={{ gap: '1rem', flexWrap: 'nowrap', pb: '1rem' }}>
+                                                <Grid container key={index ++ } sx={{ gap: '1rem', flexWrap: 'nowrap', pb: '1rem' }}>
                                                     <Grid 
                                                         item lg={6} md={6} sm={6} xs={6}
-                                                        key={index ++ }
                                                         sx={{ 
                                                             bgcolor: '#f2effd',
                                                             borderRadius: '8px',
@@ -57,14 +56,13 @@ const Word = () => {
                                                     </Grid>
                                                     <Grid 
                                                         item lg={6} md={6} sm={6} xs={6}
-                                                        key={index ++ }
                                                         sx={{ 
                                                             bgcolor: '#f2effd',
                                                             borderRadius: '8px',
                                                             height: '75px',
                                                             p: '1rem',
                                                             pt: '.5rem'
-                                                        }}>{index}
+                                                        }}>{index ++ }
                                                     </Grid>
                                                 </Grid>
                                             )

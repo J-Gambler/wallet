@@ -59,9 +59,9 @@ const Last = () => {
     const [open, setOpen] = useState(false);
     const theme = useTheme();
     const customization = useSelector((state) => state.customization);
-    const progress = [1,0,0,0,0,0]
+    const progress = [1,0,0]
 
-    let index = 0;
+    let index = 1;
 
     const handleClickOpen = () => {
         setOpen(true);
@@ -91,23 +91,50 @@ const Last = () => {
                                     <Typography variant="h2" sx={{ px: '7rem', lineHeight: '2rem'}}>The last step before using the wallet</Typography>
                                     <Typography sx={{ fontSize: '1rem', pt: '1rem' }}>Please enter the recovery words</Typography>
                                     <Typography component="div" sx={{ pt:'2rem', px: '3rem' }}>
-                                        {progress.map(e =>
-                                        <Typography component="div" key={index ++} sx={{ width: '50%', p: '.5rem', flexDirection: 'column', display: 'inline-block'}}>
-                                            <Button variant="outlined" disabled size="large" 
-                                                sx={{ 
-                                                    bgcolor: '#f2effd', 
-                                                    color: `${theme.palette.common.black} !important`, 
-                                                    fontSize: '1.25rem', 
-                                                    py: '1.25rem',
-                                                    fontWeight: 500, 
-                                                    width: '100%'
-                                                }}
-                                            >{index + 1}</Button>
-                                        </Typography>
-                                        )}
+
+                                    {
+                                        progress.map(e => 
+                                            <Grid container key={index ++ } sx={{ gap: '1rem', flexWrap: 'nowrap', pb: '1rem' }}>
+                                                <Grid 
+                                                    item lg={6} md={6} sm={6} xs={6}
+                                                    sx={{ 
+                                                        bgcolor: '#f2effd',
+                                                        borderRadius: '8px',
+                                                        height: '75px',
+                                                        p: '1rem',
+                                                        pt: '.5rem',
+                                                        textAlign: 'left',
+                                                    }}>{index}
+                                                </Grid>
+                                                <Grid 
+                                                    item lg={6} md={6} sm={6} xs={6}
+                                                    sx={{ 
+                                                        bgcolor: '#f2effd',
+                                                        borderRadius: '8px',
+                                                        height: '75px',
+                                                        p: '1rem',
+                                                        pt: '.5rem',
+                                                        textAlign: 'left',
+                                                    }}>{ ++ index}
+                                                </Grid>
+                                            </Grid>
+                                        )
+                                    }
                                     </Typography>
                                     <Typography sx={{ pt: '2rem', px: '3rem' }} component="div">
-                                        <Button variant="contained" sx={{ width: '100%', bgcolor: '#7c66eb' }} onClick={handleClickOpen}>Next</Button>
+                                        <Button 
+                                            variant="contained" 
+                                            sx={{ 
+                                                width: '100%', 
+                                                bgcolor: '#7C66EB',
+                                                borderRadius: '4px',
+                                                paddingTop: '12.5px', 
+                                                paddingBottom: '12.5px', 
+                                                color: '#FFFFFF', 
+                                                fontSize: '16px', 
+                                            }} 
+                                            onClick={handleClickOpen}
+                                        >Next</Button>
                                     </Typography>
                                 </Box>
                             </Grid>
