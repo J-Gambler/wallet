@@ -12,12 +12,23 @@ import {
 } from '@mui/material';
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 import IdentifyImage from 'assets/images/background/image 45.png';
+import Setting from './Setting';
 
 
 const Money = ({ open, onClose}) => {
+    const [openSetting, setOpenSetting] = useState(false);
+
     const handleClose = () => {
         onClose(true);
     }
+
+    const handleClickSetting = () => {
+        setOpenSetting(true);
+    };
+  
+    const handleCloseSetting = (value) => {
+        setOpenSetting(false);
+    };
     
     return (
         <>
@@ -98,10 +109,15 @@ const Money = ({ open, onClose}) => {
                         </Typography>
                     </Typography>
                     <Typography>
-                        <Button sx={{ bgcolor: '#7C66EB', p: '.875rem', color: 'white', fontSize: '1rem', width: '100%' }}>Done</Button>
+                        <Button onClick={handleClickSetting} sx={{ bgcolor: '#7C66EB', p: '.875rem', color: 'white', fontSize: '1rem', width: '100%' }}>Done</Button>
                     </Typography>
                 </Typography>
             </Dialog>
+            <Setting 
+                open={openSetting}
+                onClose={handleCloseSetting}
+            />
+
         </>
     );
 }
