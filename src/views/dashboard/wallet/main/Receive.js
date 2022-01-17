@@ -11,7 +11,7 @@ import {
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 import IdentifyImage from 'assets/images/background/image 45.png';
 
-const Identify = ({ open, onClose}) => {
+const Receive = ({ open, onClose}) => {
     const handleClose = () => {
         onClose(true);
     }
@@ -82,4 +82,4 @@ const Identify = ({ open, onClose}) => {
     );
 }
 
-export default Identify;
+export default Receive;

@@ -6,7 +6,6 @@ import Tokens from './Tokens';
 import History from './History';
 import Search from './Search';
 import Market from "./Market";
-import Identify from "./Identify";
 import Pay from "./Pay";
 import Setting from "./Setting";
 import Money from "./Money";

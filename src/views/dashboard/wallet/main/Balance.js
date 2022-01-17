@@ -10,6 +10,7 @@ import {
 import BuySell from './BuySell';
 import Buy from './Buy';
 import Swap from './Swap';
+import Receive from './Receive';
 
 import SendIcon from 'assets/images/icons/Send.svg';
 import BuyIcon from 'assets/images/icons/Buy.svg';
@@ -25,6 +26,7 @@ const Balance = () => {
     const [openBuySell, setOpenBuySell] = useState(false);
     const [openBuy, setOpenBuy] = useState(false);
     const [openSwap, setOpenSwap] = useState(false);
+    const [openReceive, setOpenReceive] = useState(false);
   
     const handleClickBuySellOpen = () => {
         setOpenBuySell(true);
@@ -48,6 +50,14 @@ const Balance = () => {
   
     const handleCloseSwap = (value) => {
         setOpenSwap(false);
+    };
+
+    const handleClickReceive = () => {
+        setOpenReceive(true);
+    };
+  
+    const handleCloseReceive = (value) => {
+        setOpenReceive(false);
     };
 
     return (
@@ -87,7 +97,7 @@ const Balance = () => {
                 >
                     <Button startIcon={<img src={SendIcon} />} size="large" onClick={handleClickBuy} sx={{ bgcolor: '#fafbfe', fontSize: '14px', px: '1.5rem', color: '#7c66eb' }} >Send</Button>
                     <Button startIcon={<img src={BuyIcon} />} size="large" onClick={handleClickBuySellOpen} sx={{ bgcolor: '#fafbfe', fontSize: '14px', px: '1.5rem', color: '#7c66eb' }}>Buy</Button>
-                    <Button startIcon={<img src={ReceiveIcon} />} size="large" sx={{ bgcolor: '#fafbfe', fontSize: '14px', px: '1.5rem', color: '#7c66eb' }}>Receive</Button>
+                    <Button startIcon={<img src={ReceiveIcon} />} size="large" onClick={handleClickReceive} sx={{ bgcolor: '#fafbfe', fontSize: '14px', px: '1.5rem', color: '#7c66eb' }}>Receive</Button>
                     <Button startIcon={<img src={SwapIcon} />} size="large" onClick={handleClickSwap} sx={{ bgcolor: '#fafbfe', fontSize: '14px', px: '1.5rem', color: '#7c66eb' }}>Swap</Button>
                 </Typography>
             </Box>
@@ -102,6 +112,10 @@ const Balance = () => {
             <Buy 
                 open={openBuy}
                 onClose={handleCloseBuy}
+            />
+            <Receive 
+                open={openReceive}
+                onClose={handleCloseReceive}
             />
         </>
     );
