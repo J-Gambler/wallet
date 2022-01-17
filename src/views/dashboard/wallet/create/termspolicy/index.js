@@ -66,12 +66,14 @@ const TermsPolicy = () => {
                 <Tabs 
                     value={value} 
                     onChange={handleChange} 
+                    textColor="secondary"
+                    indicatorColor="secondary"
                     aria-label="basic tabs example" 
                     sx={{ 
                         backgroundColor: '#f8fafc', 
                         mb: '1rem',
                         borderRadius: `${customization.borderRadius}px`,
-                        pl: '2rem'
+                        pl: '2rem',
                     }}
                 >
                     <Tab label="Terms of Service" {...a11yProps(0)} />
@@ -86,11 +88,11 @@ const TermsPolicy = () => {
             </TabPanel>
             <Typography component="div" sx={{ pt: 2 }}>
                 <Stack direction="row" spacing={2} sx={{ justifyContent: 'end' }}>
-                    <Button variant="outlined" size="large" sx={{ color: '#7C66EB', backgroundColor: '#f8fafc' }}>
+                    <Button variant="outlined" size="large" sx={{ color: '#7C66EB',border: '0px', px: '2rem', backgroundColor: 'rgba(124, 102, 235, 0.1)' }}>
                         Decline
                     </Button>
-                    <Link to="/wallet/create/backup">
-                        <Button variant="contained" size="large" sx={{ color: '#f8fafc', backgroundColor: theme.palette.secondary.main }}>
+                    <Link to="/wallet/create/backup" style={{ textDecoration: 'none' }}>
+                        <Button variant="contained" size="large" sx={{ color: '#f8fafc', px: '4rem', backgroundColor: '#7C66EB' }}>
                             Accept
                         </Button>
                     </Link>
