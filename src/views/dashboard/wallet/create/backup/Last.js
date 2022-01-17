@@ -30,6 +30,8 @@ function SimpleDialog(props) {
     return (
         <Dialog onClose={handleClose} open={open} 
             sx={{
+                bgcolor: 'rgba(0, 0, 0, 0.56)',
+                backdropFilter: 'blur(23px)',
                     '& .MuiPaper-root': {
                         bgcolor: 'transparent !important',
                         boxShadow: 'none',
@@ -41,7 +43,7 @@ function SimpleDialog(props) {
             </Typography>
             <Typography sx={{ color: 'white', fontSize: '1.25rem', textAlign: 'center' }}>Sorry, the entered word is incorrect</Typography>
             <Typography sx={{ color: 'white', fontSize: '.875rem', textAlign: 'center', pt: '1rem', pb: '3rem' }}>Try to create a wallet again</Typography>
-            <Button sx={{ px: '5rem', textAlign: 'center', bgcolor: '#7c66eb' }} variant="contained">Create a wallet</Button>
+            <Button sx={{ px: '5rem', textAlign: 'center', py: '12px', bgcolor: '#7c66eb' }} variant="contained">Create a wallet</Button>
             <Typography sx={{ pt: '1rem', fontSize: '.875rem', textAlign: 'center', color: '#aaabb0' }}>Cancel</Typography>
         </Dialog>
     );
