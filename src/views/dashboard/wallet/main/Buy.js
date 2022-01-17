@@ -13,6 +13,11 @@ import {
 } from '@mui/material';
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 import ShowChartOutlinedIcon from '@mui/icons-material/ShowChartOutlined';
+import DiagramIcon from 'assets/images/icons/Diagram.svg';
+import SendIcon from 'assets/images/icons/SendOrigin.svg';
+import ReceiveIcon from 'assets/images/icons/ReceiveOrigin.svg';
+import CopyIcon from 'assets/images/icons/Copy.svg';
+import UpArrowIcon from 'assets/images/icons/UpArrow.svg';
  
 const Item = styled(Paper)(({ theme }) => ({
     ...theme.typography.body2,
@@ -46,12 +51,13 @@ const Buy = ({ open, onClose }) => {
                         component="div"
                         sx={{
                             display: 'flex',
-                            justifyContent: 'space-between'
+                            justifyContent: 'space-between',
+                            alignItems: 'center'
                         }}
                     >
                         <ArrowBackIosNewIcon />
-                        <IconButton sx={{ p: '10px' }} aria-label="menu">
-                            <ShowChartOutlinedIcon />
+                        <IconButton sx={{ p: '10px', bgcolor: 'rgba(152, 161, 170, 0.1)' }} aria-label="menu">
+                            <img src={DiagramIcon} />
                         </IconButton>
                     </Typography>
                     <Typography component="div" sx={{ p: '1rem', pb: '2rem' }}>
@@ -63,11 +69,20 @@ const Buy = ({ open, onClose }) => {
                                 <Typography>Ethereum</Typography>
                             }
                             subheader={
-                                <Typography sx={{
-                                    fontSize: '1.5rem',
-                                    fontWeight: 600,
-                                    color: 'black'
-                                }}>$17,679.31</Typography>
+                                <Typography component="div">
+                                    <Typography 
+                                        sx={{
+                                            fontSize: '1.5rem',
+                                            fontWeight: 600,
+                                            color: 'black',
+                                            display: 'inline-block'
+                                        }}
+                                    >$17,679.31</Typography>
+                                    <Typography sx={{ display: 'inline-block', verticalAlign: 'top', pl: '.5rem' }}>
+                                        <img src={UpArrowIcon} />
+                                    </Typography>
+                                    <Typography sx={{ display: 'inline-block', color: '#60BA62', fontSize: '12px', verticalAlign: 'top' }}>$12.00</Typography>
+                                </Typography>
                             }
                         />
                         <Typography component="div"
@@ -102,12 +117,28 @@ const Buy = ({ open, onClose }) => {
                                 paddingTop: '3.5rem',
                                 flexWrap: 'nowrap',
                                 paddingBottom: '2rem',
-                                gap: '1rem' 
+                                gap: '1rem' ,
+                                textAlign: 'center'
                             }}
                         >
-                            <Grid item sx={{ bgcolor: 'white', p: '2rem', borderRadius: '0.25rem' }} lg={4} md={4} sm={4}>Send</Grid>
-                            <Grid item sx={{ bgcolor: 'white', p: '2rem', borderRadius: '0.25rem' }} lg={4} md={4} sm={4}>Receive</Grid>
-                            <Grid item sx={{ bgcolor: 'white', p: '2rem', borderRadius: '0.25rem' }} lg={4} md={4} sm={4}>Copy</Grid>
+                            <Grid item sx={{ bgcolor: 'white', borderRadius: '6px', py: '1rem' }} lg={4} md={4} sm={4}>
+                                <Typography>
+                                    <img src={SendIcon} />
+                                </Typography>
+                                <Typography>Send</Typography>
+                            </Grid>
+                            <Grid item sx={{ bgcolor: 'white', borderRadius: '6px', py: '1rem' }} lg={4} md={4} sm={4}>
+                                <Typography>
+                                    <img src={ReceiveIcon} />
+                                </Typography>
+                                <Typography>Receive</Typography>
+                            </Grid>
+                            <Grid item sx={{ bgcolor: 'white', borderRadius: '6px', py: '1rem' }} lg={4} md={4} sm={4}>
+                                <Typography>
+                                    <img src={CopyIcon} />
+                                </Typography>
+                                <Typography>Copy</Typography>
+                            </Grid>
                         </Grid>
                         <Button sx={{ bgcolor: '#7C66EB', fontSize: '1rem', width: '100%', py: '.875rem' }} variant="contained">Buy ethereum</Button>
                     </Typography>
