@@ -8,11 +8,8 @@ const BackButton = ({ url }) => {
         <>
             <Link to={url} style={{ textDecoration: 'none' }}>
                 <Button 
-                    sx={{ color: '#616161' }}
-                    startIcon={
-                        <ArrowBackIosNewIcon sx={{ fontSize: '12px !important' }}/>
-                    }
-                >Back</Button>
+                    sx={{ color: 'rgba(22, 37, 52, 0.5)' }}
+                > &lt; Back</Button>
             </Link>
         </>
     );
