@@ -8,13 +8,25 @@ import {
     Button,
     Link
 } from '@mui/material';
+import Pay from './Pay';
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 import IdentifyImage from 'assets/images/background/image 45.png';
 
 const Receive = ({ open, onClose}) => {
+
+    const [openPay, setOpenPay] = useState(false);
+
     const handleClose = () => {
         onClose(true);
     }
+
+    const handleClickPay = () => {
+        setOpenPay(true);
+    };
+  
+    const handleClosePay = (value) => {
+        setOpenPay(false);
+    };
     
     return (
         <>
@@ -70,11 +82,24 @@ const Receive = ({ open, onClose}) => {
                         Send only BTC to this address otherwise your funds will be completely lost
                     </Typography>
                     <Typography>
-                        <Button sx={{ bgcolor: '#f2f0fd', p: '.875rem', color: '#7c66eb', fontSize: '1rem', width: '100%' }}>Copy</Button>
+                        <Button 
+                            onClick={handleClickPay}
+                            sx={{ 
+                                bgcolor: '#f2f0fd', 
+                                p: '.875rem', 
+                                color: '#7c66eb', 
+                                fontSize: '1rem', 
+                                width: '100%' 
+                            }}
+                        >Copy</Button>
                     </Typography>
 
                 </Typography>
 
+                <Pay 
+                    open={openPay}
+                    onClose={handleClosePay}
+                />
 
 
             </Dialog>

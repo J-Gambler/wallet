@@ -55,14 +55,14 @@ const Pay = ({ open, onClose}) => {
                             alignItems: 'center',
                             p: '1rem',
                             py: '0.5rem',
-                            backgroundColor: '#d4dff8',
+                            backgroundColor: '#e9e9fa',
                             borderRadius: '0.25rem',
                             mb: '1rem'
                         }}
                     >
                         <Typography component="div">
                             <Typography variant="h4">MoonPay</Typography>
-                            <Typography>Third Party Provider</Typography>
+                            <Typography sx={{ color: '#485068' }}>Third Party Provider</Typography>
                         </Typography>
                         <Typography variant="h4">Available</Typography>
                     </Typography>
