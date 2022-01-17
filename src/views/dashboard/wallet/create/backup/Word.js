@@ -7,7 +7,7 @@ import {
     Button, 
     Box, 
     Grid,
-    Checkbox 
+    Checkbox,
 } from '@mui/material';
 import { Link } from 'react-router-dom';
 import BackButton from '../BackButton';
@@ -16,7 +16,7 @@ const Word = () => {
     const [check, setCheck] = useState(false);
     const theme = useTheme();
     const customization = useSelector((state) => state.customization);
-    const progress = [1,0,0,0,0,0,0,0,0,0,0,0]
+    const progress = [1,0,0,0,0,0]
     let index = 0;
 
     const onCheck = (e) => {
@@ -35,13 +35,42 @@ const Word = () => {
                                     sx={{ 
                                         bgcolor: theme.palette.common.white,
                                         position: 'relative',
-                                        textAlign: 'center',
                                         borderRadius: `${customization.borderRadius}px`,
-                                        py: '5rem',
-                                        pt: '2rem'
+                                        px: '4rem',
+                                        py: '3rem'
                                     }}
                                 >
-                                    <Typography component="div" sx={{ pb: '1rem', display: 'flex', px: '2rem' }}>
+                                    <Typography component="div">
+                                        {
+                                            progress.map(e => 
+                                                <Grid container sx={{ gap: '1rem', flexWrap: 'nowrap', pb: '1rem' }}>
+                                                    <Grid 
+                                                        item lg={6} md={6} sm={6} xs={6}
+                                                        key={index ++ }
+                                                        sx={{ 
+                                                            bgcolor: '#f2effd',
+                                                            borderRadius: '8px',
+                                                            height: '75px',
+                                                            p: '1rem',
+                                                            pt: '.5rem'
+                                                        }}>{index}
+                                                    </Grid>
+                                                    <Grid 
+                                                        item lg={6} md={6} sm={6} xs={6}
+                                                        key={index ++ }
+                                                        sx={{ 
+                                                            bgcolor: '#f2effd',
+                                                            borderRadius: '8px',
+                                                            height: '75px',
+                                                            p: '1rem',
+                                                            pt: '.5rem'
+                                                        }}>{index}
+                                                    </Grid>
+                                                </Grid>
+                                            )
+                                        }
+                                    </Typography>
+                                    {/* <Typography component="div" sx={{ pb: '1rem', display: 'flex', px: '2rem' }}>
                                         {
                                             progress.map(e => 
                                                 <Typography 
@@ -58,8 +87,8 @@ const Word = () => {
                                                 </Typography>
                                             )
                                         }
-                                    </Typography>
-                                    <Typography component="div" sx={{ height: '28rem', position: 'relative' }}>
+                                    </Typography> */}
+                                    {/* <Typography component="div" sx={{ height: '28rem', position: 'relative' }}>
                                         <Typography component="div" sx={{ pt: 'calc(50% - 5rem)', px: '25%' }}>
                                             <Button variant="outlined" disabled size="large" 
                                                 sx={{ 
@@ -72,10 +101,24 @@ const Word = () => {
                                             >Forest</Button>
                                             <Typography sx={{ textAlign: 'left', pt: '.5rem' }}>1 of 12</Typography>
                                         </Typography>
-                                    </Typography>
-                                    <Typography component="div" sx={{ pt: '2rem', px: '5rem' }}>
-                                        <Link to="/wallet/create/backup/last" style={{ textDecoration: 'none' }}>
-                                            <Button variant="contained" sx={{ width: '100%', bgcolor: '#7c66eb' }}>Next</Button>
+                                    </Typography> */}
+                                    <Typography component="div" sx={{ pt: '1rem' }}>
+                                        <Link 
+                                            to="/wallet/create/backup/last" 
+                                            style={{ 
+                                                display: 'block',
+                                                textDecoration: 'none',
+                                                backgroundColor: '#7C66EB',
+                                                color: '#FFFFFF', 
+                                                paddingTop: '16.5px', 
+                                                paddingBottom: '16.5px', 
+                                                fontSize: '16px', 
+                                                width: '100%',
+                                                borderRadius: '4px',
+                                                textAlign: 'center'
+                                            }}
+                                        >
+                                            Next
                                         </Link>
                                     </Typography>
                                 </Box>
