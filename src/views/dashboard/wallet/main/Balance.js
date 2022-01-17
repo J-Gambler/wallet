@@ -11,6 +11,10 @@ import BuySell from './BuySell';
 import Buy from './Buy';
 import Swap from './Swap';
 
+import SendIcon from 'assets/images/icons/Send.svg';
+import BuyIcon from 'assets/images/icons/Buy.svg';
+import ReceiveIcon from 'assets/images/icons/Receive.svg';
+import SwapIcon from 'assets/images/icons/Swap.svg';
 import SwapHorizOutlinedIcon from '@mui/icons-material/SwapHorizOutlined';
 import VerticalAlignBottomOutlinedIcon from '@mui/icons-material/VerticalAlignBottomOutlined';
 import VerticalAlignTopOutlinedIcon from '@mui/icons-material/VerticalAlignTopOutlined';
@@ -54,20 +58,21 @@ const Balance = () => {
                     bgcolor: '#e2eafc',
                     position: 'relative',
                     display: 'flex',
-                    borderRadius: `${customization.borderRadius}px`,  
+                    borderRadius: '8px',  
                 }}
             >
                 <Typography 
                     component="div" 
                     sx={{ 
                         bgcolor: '#e4e4fa', 
-                        borderRadius: `${customization.borderRadius}px`, 
-                        p: '1rem',
+                        borderRadius: '8px', 
+                        p: '13px',
+                        pl: '21px',
                         width: '50%'
                     }}
                 >
-                    <Typography sx={{ fontSize: '.875rem', pb: '.2rem' }}>Current Balance</Typography>
-                    <Typography variant="h3">$17,679.31</Typography>
+                    <Typography sx={{ fontSize: '14px', pb: '8px' }}>Current Balance</Typography>
+                    <Typography variant="h3" sx={{ fontSize: '26px', fontWeight: 600}}>$17,679.31</Typography>
                 </Typography>
                 <Typography
                     component="div"
@@ -77,13 +82,13 @@ const Balance = () => {
                         flexDirection: 'inherit',
                         width: '50%',
                         gap: '.5rem',
-                        py: '.5rem'
+                        py: '1rem'
                     }}
                 >
-                    <Button startIcon={<VerticalAlignTopOutlinedIcon />} size="large" onClick={handleClickBuy} sx={{ bgcolor: theme.palette.common.white, px: '1rem', color: '#7c66eb' }} >Send</Button>
-                    <Button startIcon={<VerticalAlignBottomOutlinedIcon />} size="large" onClick={handleClickBuySellOpen} sx={{ bgcolor: theme.palette.common.white, px: '1rem', color: '#7c66eb' }}>Buy</Button>
-                    <Button startIcon={<VerticalAlignBottomOutlinedIcon />} size="large" sx={{ bgcolor: theme.palette.common.white, px: '1rem', color: '#7c66eb' }}>Receive</Button>
-                    <Button startIcon={<SwapHorizOutlinedIcon />} size="large" onClick={handleClickSwap} sx={{ bgcolor: theme.palette.common.white, px: '1rem', color: '#7c66eb' }}>Swap</Button>
+                    <Button startIcon={<img src={SendIcon} />} size="large" onClick={handleClickBuy} sx={{ bgcolor: '#fafbfe', fontSize: '14px', px: '1.5rem', color: '#7c66eb' }} >Send</Button>
+                    <Button startIcon={<img src={BuyIcon} />} size="large" onClick={handleClickBuySellOpen} sx={{ bgcolor: '#fafbfe', fontSize: '14px', px: '1.5rem', color: '#7c66eb' }}>Buy</Button>
+                    <Button startIcon={<img src={ReceiveIcon} />} size="large" sx={{ bgcolor: '#fafbfe', fontSize: '14px', px: '1.5rem', color: '#7c66eb' }}>Receive</Button>
+                    <Button startIcon={<img src={SwapIcon} />} size="large" onClick={handleClickSwap} sx={{ bgcolor: '#fafbfe', fontSize: '14px', px: '1.5rem', color: '#7c66eb' }}>Swap</Button>
                 </Typography>
             </Box>
             <BuySell 
