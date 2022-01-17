@@ -30,6 +30,8 @@ function SimpleDialog(props) {
     return (
         <Dialog onClose={handleClose} open={open} 
             sx={{
+                bgcolor: 'rgba(0, 0, 0, 0.56)',
+                backdropFilter: 'blur(23px)',
                     '& .MuiPaper-root': {
                         bgcolor: 'transparent !important',
                         boxShadow: 'none',
@@ -40,8 +42,8 @@ function SimpleDialog(props) {
                 <CheckCircleOutlineIcon sx={{ fontSize: '5rem', color: theme.palette.common.white }} />
             </Typography>
             <Typography sx={{ color: 'white', fontSize: '1.25rem', textAlign: 'center', pb: '2rem' }}>Your wallet was successfully created</Typography>
-            <Link to="/wallet/main" style={{ textAlign: 'center', textDecoration: 'none' }}>
-                <Button sx={{ px: '5rem', bgcolor: '#7c66eb' }} variant="contained">Ok</Button>
+            <Link to="/wallet/main" style={{ textAlign: 'center', textDecoration: 'none', paddingLeft: '2rem', paddingRight: '2rem' }}>
+            <Button sx={{ px: '5rem', width: '100%', textAlign: 'center', py: '12px', bgcolor: '#7c66eb' }} variant="contained">Ok</Button>
             </Link>
         </Dialog>
     );
@@ -57,7 +59,7 @@ const Recover = () => {
     const [open, setOpen] = useState(false);
     const theme = useTheme();
     const customization = useSelector((state) => state.customization);
-    const progress = [1,0,0,0,0,0]
+    const progress = [1,0,0]
 
     let index = 0;
 
@@ -88,23 +90,50 @@ const Recover = () => {
                                 >
                                     <Typography variant="h2" sx={{ px: '7rem', lineHeight: '2rem'}}>Enter recovery words</Typography>
                                     <Typography component="div" sx={{ pt:'3rem', px: '3rem' }}>
-                                        {progress.map(e =>
-                                        <Typography component="div" key={index ++} sx={{ width: '50%', p: '.5rem', flexDirection: 'column', display: 'inline-block'}}>
-                                            <Button variant="outlined" disabled size="large" 
-                                                sx={{ 
-                                                    bgcolor: '#f2effd', 
-                                                    color: `${theme.palette.common.black} !important`, 
-                                                    fontSize: '1.25rem', 
-                                                    py: '1.25rem',
-                                                    fontWeight: 500, 
-                                                    width: '100%'
-                                                }}
-                                            >{index + 1}</Button>
-                                        </Typography>
-                                        )}
+                             
+                                    {
+                                        progress.map(e => 
+                                            <Grid container key={index ++ } sx={{ gap: '1rem', flexWrap: 'nowrap', pb: '1rem' }}>
+                                                <Grid 
+                                                    item lg={6} md={6} sm={6} xs={6}
+                                                    sx={{ 
+                                                        bgcolor: '#f2effd',
+                                                        borderRadius: '8px',
+                                                        height: '75px',
+                                                        p: '1rem',
+                                                        pt: '.5rem',
+                                                        textAlign: 'left',
+                                                    }}>{index}
+                                                </Grid>
+                                                <Grid 
+                                                    item lg={6} md={6} sm={6} xs={6}
+                                                    sx={{ 
+                                                        bgcolor: '#f2effd',
+                                                        borderRadius: '8px',
+                                                        height: '75px',
+                                                        p: '1rem',
+                                                        pt: '.5rem',
+                                                        textAlign: 'left',
+                                                    }}>{ ++ index}
+                                                </Grid>
+                                            </Grid>
+                                        )
+                                    }
                                     </Typography>
                                     <Typography sx={{ pt: '2rem', px: '3rem' }} component="div">
-                                        <Button variant="contained" sx={{ width: '100%', bgcolor: '#7c66eb' }} onClick={handleClickOpen}>Next</Button>
+                                        <Button 
+                                            variant="contained" 
+                                            sx={{ 
+                                                width: '100%', 
+                                                bgcolor: '#7C66EB',
+                                                borderRadius: '4px',
+                                                paddingTop: '12.5px', 
+                                                paddingBottom: '12.5px', 
+                                                color: '#FFFFFF', 
+                                                fontSize: '16px', 
+                                            }} 
+                                            onClick={handleClickOpen}
+                                        >Next</Button>
                                     </Typography>
                                 </Box>
                             </Grid>
