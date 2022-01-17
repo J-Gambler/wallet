@@ -11,6 +11,7 @@ import {
     Grid,
     IconButton
 } from '@mui/material';
+import Market from './Market';
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 import ShowChartOutlinedIcon from '@mui/icons-material/ShowChartOutlined';
 import DiagramIcon from 'assets/images/icons/Diagram.svg';
@@ -28,9 +29,20 @@ const Item = styled(Paper)(({ theme }) => ({
 
 const Buy = ({ open, onClose }) => {
 
+    const [openMarket, setOpenMarket] = useState(false);
+
     const handleClose = () => {
         onClose(true);
     }
+
+    const handleClickMarket = () => {
+        setOpenMarket(true);
+    };
+  
+    const handleCloseMarket = (value) => {
+        setOpenMarket(false);
+    };
+    
     return (
         <>
             <Dialog
@@ -140,9 +152,16 @@ const Buy = ({ open, onClose }) => {
                                 <Typography>Copy</Typography>
                             </Grid>
                         </Grid>
-                        <Button sx={{ bgcolor: '#7C66EB', fontSize: '1rem', width: '100%', py: '.875rem' }} variant="contained">Buy ethereum</Button>
+                        <Button 
+                            onClick={handleClickMarket}
+                            sx={{ bgcolor: '#7C66EB', fontSize: '1rem', width: '100%', py: '.875rem' }} variant="contained">Buy ethereum</Button>
                     </Typography>
                 </Typography>
+                <Market 
+                    open={openMarket}
+                    onClose={handleCloseMarket}
+                />
+
             </Dialog>
         </>
     );

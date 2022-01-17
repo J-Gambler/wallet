@@ -75,7 +75,7 @@ const Swap = ({ onClose, open }) => {
                                         m: '0px', ml: 'auto', mt: 'auto'
                                 } }}
                                 avatar={
-                                    <Avatar aria-label="recipe" src={EtherIcon} sx={{ width: '32px', height: '32px', bgcolor: '#7F6EE9', p: '8px', py: '12px' }} />
+                                    <Avatar aria-label="recipe" src={EtherIcon} sx={{ width: '32px', height: '32px', bgcolor: '#7F6EE9', p: '8px', py: '4px' }} />
                                 }
                                 title={<Typography variant="h3" sx={{ bgcolor: 'transparent', fontSize: '16px' }}>Alex S.</Typography>}
                                 action={
