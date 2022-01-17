@@ -8,6 +8,7 @@ import * as React from 'react';
 import InputUnstyled from '@mui/base/InputUnstyled';
 import { styled } from '@mui/system';
 import EyeClosedIcon from 'assets/images/icons/EyeClosed.svg';
+import Money from './Money';
 
 const blue = {
     200: '#80BFFF',
@@ -71,9 +72,20 @@ const CustomInput = React.forwardRef(function CustomInput(props, ref) {
 });
 
 const Password = ({ open, onClose}) => {
+
+    const [openMoney, setOpenMoney] = useState(false);
+    
     const handleClose = () => {
         onClose(true);
     }
+
+    const handleClickMoney = () => {
+        setOpenMoney(true);
+    };
+  
+    const handleCloseMoney = (value) => {
+        setOpenMoney(false);
+    };
     
     return (
         <>
@@ -106,10 +118,14 @@ const Password = ({ open, onClose}) => {
                         <CustomInput aria-label="Demo input" placeholder="Confirm password" />
                     </Typography>
                     <Typography>
-                        <Button sx={{ bgcolor: '#7C66EB', p: '.875rem', color: 'white', fontSize: '1rem', width: '100%' }}>Save</Button>
+                        <Button onClick={handleClickMoney} sx={{ bgcolor: '#7C66EB', p: '.875rem', color: 'white', fontSize: '1rem', width: '100%' }}>Save</Button>
                     </Typography>
                 </Typography>
             </Dialog>
+            <Money 
+                open={openMoney}
+                onClose={handleCloseMoney}
+            />
         </>
     );
 }

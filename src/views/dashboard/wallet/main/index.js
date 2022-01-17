@@ -57,7 +57,7 @@ const Main = () => {
                 open={openSearch}
                 onClose={handleCloseSearch}
             />
-            <Money 
+            <Password 
                 open={openMarket}
                 onClose={handleCloseMarket}
             />
