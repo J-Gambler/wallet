@@ -4,6 +4,12 @@ import Storage from 'assets/images/icons/Storage.svg';
 import Cloud from 'assets/images/icons/Cloud.svg';
 import Wallet from 'assets/images/icons/Wallet.svg';
 
+
+
+import DashboardIcon from 'ui-component/icons/DashboardIcon';
+import StorageIcon from 'ui-component/icons/StorageIcon';
+import CloudIcon from 'ui-component/icons/CloudIcon';
+import WalletIcon from 'ui-component/icons/WalletIcon';
 // constant
 const icons = { Dashboard, Storage, Cloud, Wallet };
 

@@ -11,6 +11,7 @@ import NavCollapse from '../NavCollapse';
 // ==============================|| SIDEBAR MENU LIST GROUP ||============================== //
 
 const NavGroup = ({ item }) => {
+    console.log(item)
     const theme = useTheme();
 
     // menu list collapse & items
@@ -49,7 +50,12 @@ const NavGroup = ({ item }) => {
             </List>
 
             {/* group divider */}
-            <Divider sx={{ mt: 0.25, mb: 1.25 }} />
+            {
+                item.id != 'other' 
+                ? <Divider sx={{ mt: 0.25, mb: 1.25 }} />
+                : <></>
+            }
+            {/* <Divider sx={{ mt: 0.25, mb: 1.25 }} /> */}
         </>
     );
 };
