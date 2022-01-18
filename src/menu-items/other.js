@@ -1,8 +1,9 @@
 // assets
-import SettingIcon from 'ui-component/icons/SettingIcon';
+// import SettingIcon from 'ui-component/icons/SettingIcon';
+import Setting from 'assets/images/icons/Setting.svg';
 
 // constant
-const icons = { SettingIcon };
+const icons = { Setting };
 
 // ==============================|| SAMPLE PAGE & DOCUMENTATION MENU ITEMS ||============================== //
 
@@ -15,7 +16,7 @@ const other = {
             title: 'Settings',
             type: 'item',
             url: '/settings',
-            icon: icons.SettingIcon,
+            icon: icons.Setting,
             breadcrumbs: false
         }
     ]

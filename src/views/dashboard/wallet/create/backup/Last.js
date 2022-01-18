@@ -14,10 +14,12 @@ import BackButton from '../BackButton';
 import { Link } from 'react-router-dom';
 import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
 import HighlightOffIcon from '@mui/icons-material/HighlightOff';
+import WalletSuccess from './WalletSuccess';
 
 function SimpleDialog(props) {
     const { onClose, selectedValue, open } = props;
     const theme = useTheme();
+    const [openSuccess, setSuccessOpen] =  useState(false);
 
     const handleClose = () => {
         onClose(selectedValue);
@@ -27,25 +29,39 @@ function SimpleDialog(props) {
         onClose(value);
     };
 
+    const handleClickSuccessOpen = () => {
+        setSuccessOpen(true);
+    };
+
+    const handleSuccessClose = (value) => {
+        setSuccessOpen(false);
+    };
+
     return (
-        <Dialog onClose={handleClose} open={open} 
-            sx={{
-                bgcolor: 'rgba(0, 0, 0, 0.56)',
-                backdropFilter: 'blur(23px)',
-                    '& .MuiPaper-root': {
-                        bgcolor: 'transparent !important',
-                        boxShadow: 'none',
-                        borderRadius: '0px'
-                    }
-                }}>
-            <Typography component="div" sx={{ textAlign: 'center', pb: '1rem'}}>
-                <HighlightOffIcon sx={{ fontSize: '5rem', color: theme.palette.common.white }} />
-            </Typography>
-            <Typography sx={{ color: 'white', fontSize: '1.25rem', textAlign: 'center' }}>Sorry, the entered word is incorrect</Typography>
-            <Typography sx={{ color: 'white', fontSize: '.875rem', textAlign: 'center', pt: '1rem', pb: '3rem' }}>Try to create a wallet again</Typography>
-            <Button sx={{ px: '5rem', textAlign: 'center', py: '12px', bgcolor: '#7c66eb' }} variant="contained">Create a wallet</Button>
-            <Typography sx={{ pt: '1rem', fontSize: '.875rem', textAlign: 'center', color: '#aaabb0' }}>Cancel</Typography>
-        </Dialog>
+        <>
+            <Dialog onClose={handleClose} open={open} 
+                sx={{
+                    bgcolor: 'rgba(0, 0, 0, 0.56)',
+                    backdropFilter: 'blur(23px)',
+                        '& .MuiPaper-root': {
+                            bgcolor: 'transparent !important',
+                            boxShadow: 'none',
+                            borderRadius: '0px'
+                        }
+                    }}>
+                <Typography component="div" sx={{ textAlign: 'center', pb: '1rem'}}>
+                    <HighlightOffIcon sx={{ fontSize: '5rem', color: theme.palette.common.white }} />
+                </Typography>
+                <Typography sx={{ color: 'white', fontSize: '1.25rem', textAlign: 'center' }}>Sorry, the entered word is incorrect</Typography>
+                <Typography sx={{ color: 'white', fontSize: '.875rem', textAlign: 'center', pt: '1rem', pb: '3rem' }}>Try to create a wallet again</Typography>
+                <Button onClick={handleClickSuccessOpen}  sx={{ px: '5rem', textAlign: 'center', py: '12px', bgcolor: '#7c66eb' }} variant="contained">Create a wallet</Button>
+                <Typography sx={{ pt: '1rem', fontSize: '.875rem', textAlign: 'center', color: '#aaabb0' }}>Cancel</Typography>
+            </Dialog>
+            <WalletSuccess 
+                open={openSuccess}
+                onClose={handleSuccessClose}
+            />
+        </>
     );
 }
   
