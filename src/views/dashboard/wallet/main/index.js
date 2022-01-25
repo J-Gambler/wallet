@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import Balance from "./Balance";
 import Tokens from './Tokens';
 import History from './History';
+import Nft from './Nft';
 import Search from './Search';
 import Market from "./Market";
 import Setting from "./Setting";
@@ -51,6 +52,9 @@ const Main = () => {
                 </Grid>
                 <Grid lg={6} md={12} item>
                     <History />
+                </Grid>
+                <Grid lg={12} md={12} item>
+                    <Nft />
                 </Grid>
             </Grid>
             <Search 

@@ -120,6 +120,7 @@ const MainLayout = () => {
                         backgroundSize: '100% 100%',
                         backgroundRepeat: 'no-repeat',
                         transform: 'rotate(0deg)',
+                        zIndex: -1
                     }}
                 >
                 </div>
@@ -133,6 +134,7 @@ const MainLayout = () => {
                         top: '386px',
                         backgroundSize: '100% 100%',
                         transform: 'rotate(35.59deg)',
+                        zIndex: -1
                     }}
                 ></div>
                 <Outlet />
